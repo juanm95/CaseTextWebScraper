@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "Casetext Scraper"
+    , "description": "This extension scrapes the Casetext website for citations"
+    , "permissions": [
+          "tabs"
+        ]
+    , "background": {
+        "scripts": ["jquery-2.1.4.min.js", "legal.js", "master.js"]
+    }
+    , "browser_action": {}
+    , "version": "0.1"
+    , "content_scripts": [
+        {
+            "matches": ["https://casetext.com/*"]
+            , "js": ["jquery-2.1.4.min.js", "jquery.livequery.min.js", "scraper.js"]
+            , "all_frames": true
+            , "run_at": "document_idle"
+  }]
+}
